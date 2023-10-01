@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Hello, world!</h1>
+
+    {% if request_vars %}
+    <p>The following query string parameters were provided:</p>
+    {% else %}
+    <p>No query string parameters were provided. Try adding some!</p>
+    {% endif %}
+    <ul>
+        {% for key, value in request_vars.items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "6ed1b0e6-4e1d-420b-b97b-ff87f93eaa83",
+		"name": "DVT-Wayfair-66D-Payload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST -- Row Count",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source_database\": {\n        \"db_type\": \"MSSQL\",\n        \"db_host\": \"35.225.164.168\",\n        \"db_name\": \"adventure-works-2019\",\n        \"db_user\": \"striim1219\",\n        \"db_port\": 1433,\n        \"db_password\": \"fortran21\"\n    },\n    \"target_database\": {\n        \"db_type\": \"Postgres\",\n        \"db_host\": \"127.0.0.1\",\n        \"db_name\": \"postgres\",\n        \"db_user\": \"postgres\",\n        \"db_port\": 15432,\n        \"db_password\": \"q13%Huu-/jG*=8ln\"\n    },\n    \"tables\": \"dbo.departments,public.departments; dbo.foo,public.foo\",\n    \"validation_type\": \"rowcount\",\n    \"pct_threshold\": 2,\n    \"project_id\": \"m2m-wayfair-dev\",\n    \"columns\": \"department_id, department_id; id,id\",\n    \"striim_node\": \"http://35.188.117.143:9082/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/dvt-run-validation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"dvt-run-validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET -- Sum Column",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source_database\": {\n        \"db_type\": \"MSSQL\",\n        \"db_host\": \"35.225.164.168\",\n        \"db_name\": \"adventure-works-2019\",\n        \"db_user\": \"striim1219\",\n        \"db_port\": 1433,\n        \"db_password\": \"fortran21\"\n    },\n    \"target_database\": {\n        \"db_type\": \"Postgres\",\n        \"db_host\": \"127.0.0.1\",\n        \"db_name\": \"postgres\",\n        \"db_user\": \"postgres\",\n        \"db_port\": 15432,\n        \"db_password\": \"q13%Huu-/jG*=8ln\"\n    },\n    \"tables\": \"dbo.foo,public.foo\",\n    \"validation_type\": \"sum_column\",\n    \"pct_threshold\": 2,\n    \"project_id\": \"m2m-wayfair-dev\",\n    \"columns\": \"id,id\",\n    \"striim_node\": \"http://35.188.117.143:9082/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/dvt-run-validation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"dvt-run-validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST -- Schema",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source_database\": {\n        \"db_type\": \"MSSQL\",\n        \"db_host\": \"35.225.164.168\",\n        \"db_name\": \"adventure-works-2019\",\n        \"db_user\": \"striim1219\",\n        \"db_port\": 1433,\n        \"db_password\": \"fortran21\"\n    },\n    \"target_database\": {\n        \"db_type\": \"Postgres\",\n        \"db_host\": \"127.0.0.1\",\n        \"db_name\": \"postgres\",\n        \"db_user\": \"postgres\",\n        \"db_port\": 15432,\n        \"db_password\": \"q13%Huu-/jG*=8ln\"\n    },\n    \"type\": \"Schema\",\n    \"validation_type\": \"Schema\",\n    \"tables\": \"dbo.departments,public.departments\",\n    \"grouped_columns\": [],\n    \"aggregates\": [\n        {\n            \"source_column\": null,\n            \"target_column\": null,\n            \"field_alias\": \"count\",\n            \"type\": \"count\"\n        }\n    ],\n    \"pct_threshold\": 2,\n    \"result_handler\": null,\n    \"labels\": [\n        [\n            \"label_1_name\",\n            \"label_1_value\"\n        ],\n        [\n            \"label_2_name\",\n            \"label_2_value\"\n        ]\n    ],\n    \"format\": \"table\",\n    \"project_id\": \"m2m-wayfair-dev\",\n    \"striim_node\": \"http://35.188.117.143:9082/\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/dvt-run-validation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"dvt-run-validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST -- Row",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source_database\": {\n        \"db_type\": \"MSSQL\",\n        \"db_host\": \"35.225.164.168\",\n        \"db_name\": \"adventure-works-2019\",\n        \"db_user\": \"striim1219\",\n        \"db_port\": 1433,\n        \"db_password\": \"fortran21\"\n    },\n    \"target_database\": {\n        \"db_type\": \"Postgres\",\n        \"db_host\": \"127.0.0.1\",\n        \"db_name\": \"postgres\",\n        \"db_user\": \"postgres\",\n        \"db_port\": 15432,\n        \"db_password\": \"q13%Huu-/jG*=8ln\"\n    },\n    \"tables\": \"dbo.departments,public.departments\",\n    \"validation_type\": \"row_hash\",\n    \"type\": \"Row\",\n    \"pct_threshold\": 2,\n    \"project_id\": \"m2m-wayfair-dev\",\n    \"striim_node\": \"http://35.188.117.143:9082/\",\n    \"primary_keys\": [\n        {\n            \"field_alias\": \"department_id\",\n            \"source_column\": \"department_id\",\n            \"target_column\": \"department_id\",\n            \"cast\": null\n        }\n    ],\n    \"comparison_fields\": [\n        {\n            \"field_alias\": \"department_name\",\n            \"source_column\": \"department_name\",\n            \"target_column\": \"department_name\",\n            \"cast\": null\n        }\n    ],\n    \"filter_status\": null,\n    \"use_random_rows\": true,\n    \"random_row_batch_size\": 100\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/dvt-run-validation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"dvt-run-validation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
